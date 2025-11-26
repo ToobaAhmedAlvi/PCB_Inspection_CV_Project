@@ -1,6 +1,3 @@
-# requirements.txt – WORKING version for Streamlit Cloud
---only-binary=:all:
---no-cache-dir
 streamlit==1.32.0
 ultralytics==8.3.22
 opencv-python-headless==4.9.0.80
@@ -10,10 +7,8 @@ numpy==1.26.4
 torch==2.2.0
 torchvision==0.17.0
 matplotlib==3.8.3
-
-# Critical fix for the KeyError: '__version__' error
-# This pre-built insightface wheel does NOT trigger the broken setup.py
-https://github.com/timesler/facenet-pytorch/releases/download/v1.0.0/insightface-0.7.3-cp311-cp311-manylinux_2_28_x86_64.whl
-
-# Use CPU version – Streamlit Cloud has no GPU
 onnxruntime==1.19.2
+
+# THIS LINE FIXES THE KeyError: '__version__' ERROR
+# It bypasses the broken insightface package on PyPI
+https://github.com/timesler/facenet-pytorch/releases/download/v1.0.0/insightface-0.7.3-cp311-cp311-manylinux_2_28_x86_64.whl
