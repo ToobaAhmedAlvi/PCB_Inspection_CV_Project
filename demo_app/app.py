@@ -1,9 +1,3 @@
-"""
-PCB Defect Detection Demo
-Knowledge Distillation YOLOv8n Model
-Streamlit Web Application
-"""
-
 import streamlit as st
 import cv2
 import numpy as np
