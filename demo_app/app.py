@@ -128,7 +128,7 @@ def main():
     # Model path input
     model_path = st.sidebar.text_input(
         "Model Path",
-        value="Models/best.pt",
+        value="demo_app/Models/best.pt",
         help="Path to your trained YOLOv8 model"
     )
     
