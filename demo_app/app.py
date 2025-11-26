@@ -204,12 +204,12 @@ def main():
     col1, col2, col3 = st.columns(3)
     
     sample_clicked = None
-    if col1.button("🖼️ Sample PCB 1"):
-        sample_clicked = "test_images/pcb1.jpg"
-    if col2.button("🖼️ Sample PCB 2"):
-        sample_clicked = "test_images/pcb2.jpg"
-    if col3.button("🖼️ Sample PCB 3"):
-        sample_clicked = "test_images/pcb3.jpg"
+    if col1.button("Sample PCB 1"):
+        sample_clicked = "Test_images/image1.jpg"
+    if col2.button("Sample PCB 2"):
+        sample_clicked = "Test_images/image2.jpg"
+    if col3.button("Sample PCB 3"):
+        sample_clicked = "Test_images/image3.jpg"
     
     # Load image
     image = None
@@ -251,11 +251,11 @@ def main():
     
     with col1:
         st.markdown("**📷 Original Image**")
-        st.image(image, use_container_width=True)
+        st.image(image, use_column_width=True)
     
     with col2:
         st.markdown("**🎯 Detection Result**")
-        st.image(annotated_img, use_container_width=True)
+        st.image(annotated_img, use_column_width=True)
     
     # Detection statistics
     num_detections = len(results.boxes)
@@ -316,7 +316,7 @@ def main():
                 aug_results, aug_annotated, _ = process_image(aug_pil, model, conf_threshold)
                 
                 st.markdown(f"**Augmented {idx + 1}**")
-                st.image(aug_annotated, use_container_width=True)
+                st.image(aug_annotated, use_column_width=True)
                 
                 aug_detections = len(aug_results.boxes)
                 st.metric(f"Detections", aug_detections)
