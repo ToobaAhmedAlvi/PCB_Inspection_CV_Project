@@ -199,11 +199,11 @@ def main():
     
     sample_clicked = None
     if col1.button("Sample PCB 1"):
-        sample_clicked = "Test_images/image4.jpg"
+        sample_clicked = "demo_app/Test_images/image4.jpg"
     if col2.button("Sample PCB 2"):
-        sample_clicked = "Test_images/image2.jpeg"
+        sample_clicked = "demo_app/Test_images/image2.jpeg"
     if col3.button("Sample PCB 3"):
-        sample_clicked = "Test_images/image5.jpg"
+        sample_clicked = "demo_app/Test_images/image5.jpg"
     
     # Load image
     image = None
