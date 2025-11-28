@@ -1,0 +1,14 @@
+artifact_uri: file:e:/IBA_MS_DS 2026/Computer Vision/Project/New folder/runs/mlflow/684447999617180267/0392b94af72642488adc3efa9e0e94f7/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '684447999617180267'
+lifecycle_stage: active
+run_id: 0392b94af72642488adc3efa9e0e94f7
+run_name: teacher_pcb4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761844716615
+status: 1
+tags: []
+user_id: hp

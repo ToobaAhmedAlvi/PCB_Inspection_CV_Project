@@ -1,0 +1,14 @@
+artifact_uri: file:E:/IBA_MS_DS 2026/Computer Vision/Project/New folder/runs/mlflow/720416369017924845/50570c9e12404a9aa1ba7d98b62c9233/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '720416369017924845'
+lifecycle_stage: active
+run_id: 50570c9e12404a9aa1ba7d98b62c9233
+run_name: PCB_teacher_i7-6600U_yolov8n_640px
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763974554056
+status: 1
+tags: []
+user_id: hp

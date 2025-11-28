@@ -1,0 +1,6 @@
+Metric,Original,Augmented
+Total Images,693,8316
+Total Annotations,2953,35429
+Avg Images/Class,116,1386
+Class Balance σ (%),0.1,0.07
+Expansion Factor,1×,12.0×
