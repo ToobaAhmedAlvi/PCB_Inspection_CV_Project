@@ -186,6 +186,12 @@ def main():
     # Main content
     st.markdown("---")
     
+    # Initialize session state
+    if 'current_image_source' not in st.session_state:
+        st.session_state.current_image_source = None
+    if 'current_image_name' not in st.session_state:
+        st.session_state.current_image_name = None
+    
     # File uploader
     uploaded_file = st.file_uploader(
         "📤 Upload PCB Image",
@@ -197,20 +203,28 @@ def main():
     st.markdown("**Or try a sample image:**")
     col1, col2, col3 = st.columns(3)
     
-    sample_clicked = None
     if col1.button("Sample PCB 1"):
-        sample_clicked = "demo_app/Test_images/image4.jpg"
+        st.session_state.current_image_source = "demo_app/Test_images/image4.jpg"
+        st.session_state.current_image_name = "Sample PCB 1"
     if col2.button("Sample PCB 2"):
-        sample_clicked = "demo_app/Test_images/image2.jpeg"
+        st.session_state.current_image_source = "demo_app/Test_images/image2.jpeg"
+        st.session_state.current_image_name = "Sample PCB 2"
     if col3.button("Sample PCB 3"):
-        sample_clicked = "demo_app/Test_images/image5.jpg"
+        st.session_state.current_image_source = "demo_app/Test_images/image5.jpg"
+        st.session_state.current_image_name = "Sample PCB 3"
     
     # Load image
     image = None
+    image_name = None
+    
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
-    elif sample_clicked and os.path.exists(sample_clicked):
-        image = Image.open(sample_clicked)
+        image_name = uploaded_file.name
+        # Clear sample selection when file is uploaded
+        st.session_state.current_image_source = None
+    elif st.session_state.current_image_source and os.path.exists(st.session_state.current_image_source):
+        image = Image.open(st.session_state.current_image_source)
+        image_name = st.session_state.current_image_name
     
     if image is None:
         st.info("👆 Please upload an image or select a sample to begin detection")
@@ -350,7 +364,7 @@ def main():
 PCB DEFECT DETECTION REPORT
 {'='*50}
 
-Image: {uploaded_file.name if uploaded_file else 'Sample Image'}
+Image: {image_name if image_name else 'Unknown Image'}
 Detection Time: {inference_time:.2f} ms
 Confidence Threshold: {conf_threshold}
 
