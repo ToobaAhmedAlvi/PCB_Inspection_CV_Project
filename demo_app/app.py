@@ -89,7 +89,7 @@ def get_augmentation_pipeline():
 # ========================================================
 # IMAGE PROCESSING
 # ========================================================
-def process_image(image, model, conf_threshold=0.35):
+def process_image(image, model, conf_threshold=0.20):
     """Run inference on image"""
     # Convert PIL to numpy array
     img_array = np.array(image)
@@ -161,7 +161,7 @@ def main():
         "Confidence Threshold",
         min_value=0.1,
         max_value=1.0,
-        value=0.35,
+        value=0.20,
         step=0.05,
         help="Minimum confidence for detections"
     )
